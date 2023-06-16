@@ -5,11 +5,14 @@ import { refreshToken } from "../controller/refreshToken.js";
 
 const router = express.Router();
 
+router.get('/', (req, res) => {
+    res.status(200).send('Hello Guys!');
+  });
 router.get('/users', verifyToken, getUsers);
-// post blm berjalan
 router.post('/users', register);
 router.post('/login', Login);
 router.get('/token', refreshToken);
 router.delete('/logout', Logout);
+router.get('history', classHistory);
 
 export default router;

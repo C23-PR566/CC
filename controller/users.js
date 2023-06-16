@@ -9,7 +9,7 @@ export const getUsers = async(req, res) => {
         });
         res.json(users);
     } catch (error) {
-        console.log("maaf error");
+        console.log("Error!");
     }
 }
 
@@ -39,7 +39,6 @@ export const Login = async(req, res) => {
         });
         const match = await bcrypt.compare(req.body.password, user[0].password);
         if(!match) return res.status(400).json({msg: "Wrong Password!"});
-        // id ga kedetect
         const userId = user[0].id;
         const username = user[0].username;
         const email = user[0].email;
@@ -54,6 +53,7 @@ export const Login = async(req, res) => {
                 id: userId
             }
         });
+        res.status(200).send('Login is Successful').json({ accessToken });
         res.cookie('refreshToken', refreshToken, {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000,

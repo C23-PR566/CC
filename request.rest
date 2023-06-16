@@ -1,0 +1,30 @@
+POST http://localhost:8080/users/
+Content-Type: application/json
+
+{
+    "username": "Tasya",
+    "email": "tasya123@gmail.com",
+    "password": "12345",
+    "confPassword": "12345"
+}
+
+####
+POST  http://localhost:8080/login/
+Content-Type: application/json
+
+{
+    "email": "tasya123@gmail.com",
+    "password": "12345"
+}
+
+####
+GET http://localhost:8080/users/
+Authorization: Bearer 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsInVzZXJuYW1lIjoiVGFzeWEiLCJlbWFpbCI6InRhc3lhMTIzQGdtYWlsLmNvbSIsImlhdCI6MTY4NTUzNDgwNSwiZXhwIjoxNjg1NTM0ODM1fQ.YAItqEPKso5dEa3yMtEikLmmmiUtAHkOWTfhfImUTMQ
+
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsInVzZXJuYW1lIjoiVGFzeWEiLCJlbWFpbCI6InRhc3lhMTIzQGdtYWlsLmNvbSIsImlhdCI6MTY4NTUzMzMwNywiZXhwIjoxNjg1NTMzMzM3fQ.7I75p4JkHdpNdNda0ME9ywizESkoqTTHWvM4ElBKIgo
+
+
+###
+DELETE http://localhost:8080/logout/
+
